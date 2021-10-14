@@ -7,7 +7,7 @@ route.get("/", (req, res) => {
 
 route.post('/send', async (req, res) => {
     const body = req.body;
-    // const response = await sendMessage(body.body, body.phone);
+    const response = await sendMessage(body.message, body.phone);
     res.send('Sended');
 });
 

@@ -8,9 +8,9 @@ const client = require('twilio')(config.twilioSid, config.twilioToken);
  */
 async function sendMessage(body, phone) {
     return await client.messages.create({
-        to: config.phone,
-        from: '+12058329927',
-        body: 'Test 1'
+        to: phone,
+        from: config.phone,
+        body
     })
 }
 

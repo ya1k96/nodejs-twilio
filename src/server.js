@@ -14,7 +14,10 @@ app.engine('.hbs', hbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
+app.use('/public',express.static(path.join(__dirname, 'public')));
 //middlewares
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 //routes
 app.use(require('./routes/index.routes'));
 

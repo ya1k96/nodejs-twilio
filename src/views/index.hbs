@@ -1,10 +1,30 @@
-<h2 class="font-medium text-gray-600">Send a SMS</h2>
+<h2 class="font-medium text-gray-600">Servicio de mensajeria</h2>
 <div class="border border-gray-300 p-5 rounded-xl mt-2">
+    <div class="flex flex-row m-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-gray-500 font-medium text-sm mt-1 mx-2">Solo Argentina</p>
+    </div>
+    {{#if errors}}
+        <div class="bg-red-100 rounded-xl p-2 m-1">
+            {{#each errors}}
+                <p class="text-xs font-medium text-red-400">{{this.msg}}</p>
+            {{/each}}
+        </div>    
+    {{else}}
+        <div class="bg-green-100 rounded-xl p-2 m-1">
+            <p class="text-xs font-medium text-green-400">Mensaje enviado!</p>
+        </div>
+    {{/if}}
+    <div>
+        
+    </div>
     <form action="/send" method="POST">
-        <label for="price" class="block text-sm font-medium text-gray-700">Phone</label>
-        <input type="text" class="focus:ring-indigo-500 outline-none focus:border-indigo-500 block w-full  pr-12 sm:text-sm border-gray-300 rounded-md border border-gray-200 p-2" name="phone">
-        <label for="price" class="block text-sm font-medium text-gray-700">Message</label>
-        <input type="text" class="focus:ring-indigo-500 outline-none focus:border-indigo-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md border border-gray-200 p-2" name="message">
+        <label for="price" class="block text-sm font-medium text-gray-700">Telefono</label>
+        <input type="text" class="focus:ring-indigo-500 outline-none focus:border-indigo-500 block w-full  pr-12 sm:text-sm border-gray-300 rounded-md border border-gray-200 p-2" name="to">
+        <label for="price" class="block text-sm font-medium text-gray-700">Mensaje</label>        
+        <textarea class="focus:ring-indigo-500 outline-none focus:border-indigo-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md border border-gray-200 p-2" name="message" id="" cols="30" rows="5"></textarea>
         <input type="submit" class="bg-blue-400 rounded-full px-4 py-1 text-white mt-5" value="Enviar">
     </form>
 </div>

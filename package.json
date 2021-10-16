@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "express-validator": "^6.13.0",
     "moment": "^2.29.1",
     "mongoose": "^6.0.10",
     "socket.io": "^4.2.0",
